@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fontawesome-free-6.0.0-beta2-web/css/all.min.css">
+    <link rel="stylesheet" href="../scss/main.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <main class="fade-in">
+        <h1 class="offscreen">Responsive Weather with API</h1>
+        <!-- bagian search -->
+        <section id="searchBar" class="searchBar fade-in">
+            <form id="searchBar_form" class="searchBar_form" role="search">
+                <label for="searchBar_text" class="offscreen">Enter a new location</label>
+                <input id="searchBar_text" class="searchBar_text" type="text" role="searchBox" size="40" autocomplete="off" placeholder="City, State, Country">
+                <button id="searchBar_button" class="searchBar_button button" title="Submit Location" aria-label="Enter Zip Corde or City, State, and Country to retrieve weather condition">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-sync fa-spin none"></i>
+                </button>
+            </form>
+        </section>
+
+        <!-- bagian ramalan cuaca -->
+        <a href="#currentForeceast" class="skip-link">Skip To Current Condition</a>
+        <section id="currentForeceast" class="currentForeceast fade-in" role="region" aria-label="weatherLocation">
+            <h2 id="currentForeceast_location" class="currentForeceast_location">Current Condition</h2>
+            <div id="currentForeceast_conditions" class="currentForeceast_conditions"></div>
+        </section>
+
+        <!-- cuaca harian -->
+        <a href="#dailyForeceast" class="skip-link">Skip To Six Day Foreceast</a>
+        <nav id="navButtons" class="navButtons fade-in">
+            <button id="getLocation" class="button" title="Get Location" aria-label="Get the current weather condition for your current location">
+                <i class="fas fa-map-marker-alt"></i>
+                <i class="fas fa-sync fa-spin none"></i>
+            </button>
+            <button id="home" class="button" title="Home Weather" aria-label="Get the current weather condition for your home location">
+                <i class="fas fa-home"></i>
+                <i class="fas fa-sync fa-spin none"></i>
+            </button>
+            <button id="saveLocation" class="button" title="Save Location" aria-label="Save the current weather condition for your home location">
+                <i class="fas fa-save"></i>
+                <i class="fas fa-sync fa-spin none"></i>
+            </button>
+            <button id="unit" class="button" title="Toggle Measurent Units" aria-label="Toggle between metric and imperial measurent units">
+                <i class="fas fa-chart-bar"></i>
+                <i class="fas fa-sync fa-spin none"></i>
+            </button>
+            <button id="refresh" class="button" title="Refresh Location" aria-label="Refresh the current weather condition">
+                <i class="fas fa-sync-alt"></i>
+                <i class="fas fa-sync fa-spin none"></i>
+            </button>
+        </nav>
+        <hr fade-in>
+        <section id="dailyForeceast" class="dailyForeceast fade-in" role="region" aria-label="dailyForeceast_title">
+            <h2 id="dailyForeceast_title" class="dailyForeceast_title offscreen">Six Day Foreceast</h2>
+            <div id="dailyForeceast_contents" class="dailyForeceast_contents"></div>
+        </section>
+        <p id="confirmation" class="offscreen" aria-live="assertive"></p>
+    </main>
+
+    <script type="module" src="js/index.js"></script>
+</body>
+</html>
